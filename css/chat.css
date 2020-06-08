@@ -10,7 +10,7 @@
 
 .chat-body {
   background-image: url(../images/chatBg.png);
-  min-height: 10000vh;
+  min-height: 1000vh;
 }
 
 .chat-body {
@@ -23,10 +23,9 @@
   padding: 0px 20px;
 }
 
-.chat__write {
+.chat__write-container {
   position: fixed;
-  bottom: 50px;
-  width: 80%;
+  bottom: 0px;
   margin: 0 auto;
   left: 0;
   right: 0;
@@ -35,28 +34,40 @@
   align-items: center;
   background-color: #fcfcfc;
   padding: 0px 20px;
-  border-radius: 40px;
-  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
-    0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+
+  /* box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25), */
+  /* 0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025); */
 }
 
-.chat__write i {
-  font: size 22px;
-}
-
-.chat__write-column:nth-child(2) {
-  width: 80%;
-}
-
-.chat__write-column input {
-  padding: 20px 10px;
+.chat__write {
+  bottom: 0px;
+  width: 100%;
+  border-radius: 0px;
+  padding: 20px 60px;
   width: 100%;
   border: none;
   font-size: 14px;
 }
 
-.chat__write-column input:focus {
+.chat__icon-left {
+  position: absolute;
+}
+
+.chat__icon-right {
+  position: absolute;
+  right: 10px;
+}
+
+.chat__write:focus {
   outline: none;
+}
+
+.chat__icon {
+  font-size: 18px;
+  transition: opacity 0.3s ease-in-out;
+}
+.chat__write:focus ~ .chat__icon {
+  opacity: 0;
 }
 
 .chat .chat__messages {
@@ -102,6 +113,13 @@
   border-radius: 15px;
 }
 
+.incoming-message .message__author {
+  margin-top: 10px;
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+}
+
 .message .message__bubble {
   background-color: white;
   display: block;
@@ -111,13 +129,6 @@
   padding: 10px 20px;
   border-radius: 20px;
   color: white;
-  font-weight: 600;
-}
-
-.incoming-message .message__author {
-  margin-top: 10px;
-  display: block;
-  font-size: 12px;
   font-weight: 600;
 }
 
